@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+ xsi:schemaLocation="
+ http://www.springframework.org/schema/security 
+ http://www.springframework.org/schema/security/spring-security.xsd
+ http://www.springframework.org/schema/beans 
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+ <http>
+ <intercept-url pattern="/**" access="authenticated" />
+ <http-basic />
+ </http>
+
+ <!--authentication-manager>
+ <authentication-provider>
+ <user-service>
+ <user name="user1" password="user1Pass" authorities="ROLE_USER" />
+ </user-service>
+ </authentication-provider>
+ </authentication-manager-->
+
+<!--beans:bean id="myUserDetailsService"
+  class="com.uxpsystems.assignment.service.UserManager"/-->
+ 
+<authentication-manager>
+    <authentication-provider      user-service-ref="userManager" >
+        <password-encoder ref="passwordEncoder">
+        </password-encoder>
+    </authentication-provider>
+</authentication-manager>
+     
+<beans:bean id="passwordEncoder"
+  class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+    <beans:constructor-arg value="11"/>
+</beans:bean>
+
+</beans:beans>
