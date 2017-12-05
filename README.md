@@ -1,5 +1,5 @@
 # springRestful
-Spring Restful services with Hibernate and basic spring security
+Spring Restful services with Hibernate and basic spring security. 
 Here I am using HSQLDB run as server, as I am using DBPC connection pool.
 Front side use ajax call.
 Need use test case to insert user info into database, as password is encrypted.
@@ -16,5 +16,3 @@ CREATE TABLE user_tbl (
 );
 ALTER TABLE user_tbl ADD UNIQUE (username);
 ALTER TABLE user_tbl ADD CHECK (status = 'Activated' or status='Deactivated');
-
-Spring framework 4, Hibernate 5
