@@ -1,9 +1,7 @@
 # springRestful
 Spring Restful services with Hibernate and basic spring security. 
 Here I am using HSQLDB run as server, as I am using DBPC connection pool.
-Front side use ajax call.
-Need use test case to insert user info into database, as password is encrypted.
-GET for search, POST for insert, PUT for update, DEL for delete.
+java -classpath lib/hsqldb.jar org.hsqldb.server.Server --database.0 file:hsqldb/TestDB --dbname.0 UXPTestDB
 
 CREATE TABLE user_tbl (
    id BIGINT NOT NULL,
@@ -16,3 +14,7 @@ CREATE TABLE user_tbl (
 );
 ALTER TABLE user_tbl ADD UNIQUE (username);
 ALTER TABLE user_tbl ADD CHECK (status = 'Activated' or status='Deactivated');
+
+Front side use ajax call.
+Need use test case to insert user info into database, as password is encrypted.
+GET for search, POST for insert, PUT for update, DEL for delete.
