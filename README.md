@@ -9,7 +9,7 @@ CREATE TABLE user_tbl (
    id BIGINT NOT NULL,
    username VARCHAR(50) NOT NULL,
    password VARCHAR(256) NOT NULL,
-   role binary(20) NOT NULL,
+   role VARCHAR(20) NOT NULL,
    status VARCHAR(20) NOT NULL,
   
    PRIMARY KEY (id)
